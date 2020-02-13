@@ -7,6 +7,41 @@ Some boilerplate in component1 is allowed, but nothing that requires knowledge o
 In the root only generic code is allowed, no code that requires specific knowledge of names or paths of nested components.
 In short: create a component that can be (infinitely) nested in a project.
 
+# Folder structure
+
+`tree`:
+
+```
+CMakeLists.txt
+├── components
+│   ├── component1
+│   │   ├── CMakeLists.txt
+│   │   ├── components
+│   │   │   └── component1a
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── inc
+│   │   │       │   └── component1a.h
+│   │   │       └── src
+│   │   │           └── component1a.c
+│   │   ├── inc
+│   │   │   └── component1.h
+│   │   ├── project_include.cmake
+│   │   └── src
+│   │       └── component1.c
+│   └── component2
+│       ├── CMakeLists.txt
+│       ├── inc
+│       │   └── component2.h
+│       └── src
+│           └── component2.c
+├── main
+│   ├── CMakeLists.txt
+│   ├── component.mk
+│   └── main.cpp
+├── README.md
+└── sdkconfig
+```
+
 # Attempts:
 * add the following line to root CMakeLists.txt: `set(EXTRA_COMPONENT_DIRS components/component1/components)` -> works, but is ugly workaround
 * move component1a to root component folder -> works but is ugly workaround
