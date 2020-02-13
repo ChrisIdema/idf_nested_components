@@ -1,0 +1,20 @@
+# esp-idf build artefacts
+build
+sdkconfig.old
+sdkconfig
+
+# eclipse project files
+.project
+.cproject
+.settings
+*.launch
+
+# VSCode
+.vscode/*
+
+# cpplint configuration file 
+CPPLINT.cfg
+
+# doxygen output files
+html
+
