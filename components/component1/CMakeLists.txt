@@ -1,4 +1,4 @@
 idf_component_register(SRC_DIRS "src"
                        INCLUDE_DIRS "inc"
-                       REQUIRES component1a)
+                       PRIV_REQUIRES component1a)
 
